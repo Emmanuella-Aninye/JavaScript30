@@ -7,16 +7,108 @@
 </head>
 
 <body>
+    <div class="allClocksContainer">
 
+        <div class="clockContainer">
+            <div class="clock">
+                <div class="clock-face">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand min-hand"></div>
+                    <div class="hand second-hand"></div>
+                </div>
+            </div>
+            <text class="text">
+            UTC−05:00 New York
+        </text>
+        </div>
+        <div class="clockContainer">
+            <div class="clock">
+                <div class="clock-face">
+                    <div class="hand nigeria-hour-hand"></div>
+                    <div class="hand nigeria-min-hand"></div>
+                    <div class="hand nigeria-second-hand"></div>
+                </div>
+            </div>
+            <text class="text">
+            UTC+01:00 Nigeria
+        </text>
+        </div>
+        <div class="clockContainer">
+            <div class="clock">
+                <div class="clock-face">
+                    <div class="hand australia-hour-hand"></div>
+                    <div class="hand australia-min-hand"></div>
+                    <div class="hand australia-second-hand"></div>
+                </div>
+            </div>
+            <text class="text">
+            UTC+05:00 Australia
+        </text>
+        </div>
 
-    <div class="clock">
-        <div class="clock-face">
-            <div class="hand hour-hand"></div>
-            <div class="hand min-hand"></div>
-            <div class="hand second-hand"></div>
+        <div class="clockContainer">
+            <div class="clock">
+                <div class="clock-face">
+                    <div class="hand mexico-hour-hand"></div>
+                    <div class="hand mexico-min-hand"></div>
+                    <div class="hand mexico-second-hand"></div>
+                </div>
+            </div>
+            <text class="text">
+            UTC−07:00 Mexico
+          </text>
+        </div>
+
+        <div class="clockContainer">
+            <div class="clock">
+                <div class="clock-face">
+                    <div class="hand uk-hour-hand"></div>
+                    <div class="hand uk-min-hand"></div>
+                    <div class="hand uk-second-hand"></div>
+                </div>
+            </div>
+            <text class="text">
+            UTC±00:00 United Kingdom
+          </text>
+        </div>
+
+        <div class="clockContainer">
+            <div class="clock">
+                <div class="clock-face">
+                    <div class="hand russia-hour-hand"></div>
+                    <div class="hand russia-min-hand"></div>
+                    <div class="hand russia-second-hand"></div>
+                </div>
+            </div>
+            <text class="text">
+            UTC+03:00 Russia 
+          </text>
+        </div>
+        <div class="clockContainer">
+            <div class="clock">
+                <div class="clock-face">
+                    <div class="hand japan-hour-hand"></div>
+                    <div class="hand japan-min-hand"></div>
+                    <div class="hand japan-second-hand"></div>
+                </div>
+            </div>
+            <text class="text">
+            UTC+09:00 Japan 
+          </text>
+        </div>
+        <div class="clockContainer">
+            <div class="clock">
+                <div class="clock-face">
+                    <div class="hand newZealand-hour-hand"></div>
+                    <div class="hand newZealand-min-hand"></div>
+                    <div class="hand newZealand-second-hand"></div>
+                </div>
+            </div>
+            <text class="text">
+            UTC+13:00 New Zealand
+          </text>
         </div>
     </div>
-
 
     <style>
         html {
@@ -33,15 +125,39 @@
             display: flex;
             flex: 1;
             min-height: 100vh;
+            max-height: 100%;
             align-items: center;
+            text-align: center;
+            margin: auto
+        }
+        
+        .text {
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+        
+        .allClocksContainer {
+            display: inline-flex;
+            flex-direction: row;
+            margin: auto;
+            justify-content: center;
+        }
+        
+        .clockContainer {
+            display: inline-flex;
+            flex-direction: column;
+            margin: 10px;
         }
         
         .clock {
-            width: 30rem;
-            height: 30rem;
-            border: 20px solid pink;
+            width: 10rem;
+            height: 10rem;
+            border: 5px solid pink;
             border-radius: 50%;
             margin: 50px auto;
+            margin-bottom: 10px;
             position: relative;
             padding: 2rem;
             box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #EFEFEF, inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
@@ -73,10 +189,220 @@
         const minutesHand = document.querySelector('.min-hand')
         const hoursHand = document.querySelector('.hour-hand')
 
+        const secondHandNigeria = document.querySelector('.nigeria-second-hand')
+        const minutesHandNigeria = document.querySelector('.nigeria-min-hand')
+        const hoursHandNigeria = document.querySelector('.nigeria-hour-hand')
+
+        const secondHandAustralia = document.querySelector('.australia-second-hand')
+        const minutesHandAustralia = document.querySelector('.australia-min-hand')
+        const hoursHandAustralia = document.querySelector('.australia-hour-hand')
+
+        const secondHandNewZealand = document.querySelector('.newZealand-second-hand')
+        const minutesHandNewZealand = document.querySelector('.newZealand-min-hand')
+        const hoursHandNewZealand = document.querySelector('.newZealand-hour-hand')
+
+        const secondHandMexico = document.querySelector('.mexico-second-hand')
+        const minutesHandMexico = document.querySelector('.mexico-min-hand')
+        const hoursHandMexico = document.querySelector('.mexico-hour-hand')
+
+        const secondHandUK = document.querySelector('.uk-second-hand')
+        const minutesHandUK = document.querySelector('.uk-min-hand')
+        const hoursHandUK = document.querySelector('.uk-hour-hand')
+
+        const secondHandRussia = document.querySelector('.russia-second-hand')
+        const minutesHandRussia = document.querySelector('.russia-min-hand')
+        const hoursHandRussia = document.querySelector('.russia-hour-hand')
+
+        const secondHandJapan = document.querySelector('.japan-second-hand')
+        const minutesHandJapan = document.querySelector('.japan-min-hand')
+        const hoursHandJapan = document.querySelector('.japan-hour-hand')
+
         function checkIf90Degrees(clockHand, degrees) {
             if (degrees === 90) {
                 clockHand.style.transition = 'all 0.0s'
             }
+        }
+
+        function setDateUK() {
+            var ukTime = new Date().toLocaleString("en-US", {
+                timeZone: 'Europe/London',
+
+
+            });
+            ukTime = new Date(ukTime);
+            const now = ukTime;
+            const seconds = now.getSeconds()
+            const minutes = now.getMinutes()
+            const hours = now.getHours()
+
+
+            const secondsDegrees = ((seconds / 60) * 360) + 90
+            secondHandUK.style.transform = `rotate(${secondsDegrees}deg)`
+
+            const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
+            minutesHandUK.style.transform = `rotate(${minutesDegrees}deg)`
+
+            const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
+            hoursHandUK.style.transform = `rotate(${hoursDegrees}deg)`
+
+            checkIf90Degrees(secondHandUK, secondsDegrees)
+            checkIf90Degrees(minutesHandUK, minutesDegrees)
+            checkIf90Degrees(hoursHandUK, hoursDegrees)
+        }
+
+        function setDateRussia() {
+            var russiaTime = new Date().toLocaleString("en-US", {
+                timeZone: 'Europe/Moscow',
+
+
+            });
+            russiaTime = new Date(russiaTime);
+            const now = russiaTime;
+            const seconds = now.getSeconds()
+            const minutes = now.getMinutes()
+            const hours = now.getHours()
+
+
+            const secondsDegrees = ((seconds / 60) * 360) + 90
+            secondHandRussia.style.transform = `rotate(${secondsDegrees}deg)`
+
+            const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
+            minutesHandRussia.style.transform = `rotate(${minutesDegrees}deg)`
+
+            const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
+            hoursHandRussia.style.transform = `rotate(${hoursDegrees}deg)`
+
+            checkIf90Degrees(secondHandRussia, secondsDegrees)
+            checkIf90Degrees(minutesHandRussia, minutesDegrees)
+            checkIf90Degrees(hoursHandRussia, hoursDegrees)
+        }
+
+        function setDateJapan() {
+            var japanTime = new Date().toLocaleString("en-US", {
+                timeZone: 'Asia/Tokyo',
+
+            });
+            japanTime = new Date(japanTime);
+            const now = japanTime;
+            const seconds = now.getSeconds()
+            const minutes = now.getMinutes()
+            const hours = now.getHours()
+
+
+            const secondsDegrees = ((seconds / 60) * 360) + 90
+            secondHandJapan.style.transform = `rotate(${secondsDegrees}deg)`
+
+            const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
+            minutesHandJapan.style.transform = `rotate(${minutesDegrees}deg)`
+
+            const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
+            hoursHandJapan.style.transform = `rotate(${hoursDegrees}deg)`
+
+            checkIf90Degrees(secondHandJapan, secondsDegrees)
+            checkIf90Degrees(minutesHandJapan, minutesDegrees)
+            checkIf90Degrees(hoursHandJapan, hoursDegrees)
+        }
+
+        function setDateMexico() {
+            var mexicoTime = new Date().toLocaleString("en-US", {
+                timeZone: 'Pacific/Auckland',
+
+            });
+            mexicoTime = new Date(mexicoTime);
+            const now = mexicoTime;
+            const seconds = now.getSeconds()
+            const minutes = now.getMinutes()
+            const hours = now.getHours()
+
+
+            const secondsDegrees = ((seconds / 60) * 360) + 90
+            secondHandMexico.style.transform = `rotate(${secondsDegrees}deg)`
+
+            const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
+            minutesHandMexico.style.transform = `rotate(${minutesDegrees}deg)`
+
+            const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
+            hoursHandMexico.style.transform = `rotate(${hoursDegrees}deg)`
+
+            checkIf90Degrees(secondHandMexico, secondsDegrees)
+            checkIf90Degrees(minutesHandMexico, minutesDegrees)
+            checkIf90Degrees(hoursHandMexico, hoursDegrees)
+        }
+
+        function setDateNewZealand() {
+            var newZealandTime = new Date().toLocaleString("en-US", {
+                timeZone: 'Pacific/Auckland',
+
+            });
+            newZealandTime = new Date(newZealandTime);
+            const now = newZealandTime;
+            const seconds = now.getSeconds()
+            const minutes = now.getMinutes()
+            const hours = now.getHours()
+
+
+            const secondsDegrees = ((seconds / 60) * 360) + 90
+            secondHandNewZealand.style.transform = `rotate(${secondsDegrees}deg)`
+
+            const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
+            minutesHandNewZealand.style.transform = `rotate(${minutesDegrees}deg)`
+
+            const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
+            hoursHandNewZealand.style.transform = `rotate(${hoursDegrees}deg)`
+
+            checkIf90Degrees(secondHandNewZealand, secondsDegrees)
+            checkIf90Degrees(minutesHandNewZealand, minutesDegrees)
+            checkIf90Degrees(hoursHandNewZealand, hoursDegrees)
+        }
+
+        function setDateNigeria() {
+            var naijaTime = new Date().toLocaleString("en-US", {
+                timeZone: 'Africa/Lagos'
+            });
+            naijaTime = new Date(naijaTime);
+            const now = naijaTime;
+            const seconds = now.getSeconds()
+            const minutes = now.getMinutes()
+            const hours = now.getHours()
+
+
+            const secondsDegrees = ((seconds / 60) * 360) + 90
+            secondHandAustralia.style.transform = `rotate(${secondsDegrees}deg)`
+
+            const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
+            minutesHandAustralia.style.transform = `rotate(${minutesDegrees}deg)`
+
+            const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
+            hoursHandAustralia.style.transform = `rotate(${hoursDegrees}deg)`
+
+            checkIf90Degrees(secondHandAustralia, secondsDegrees)
+            checkIf90Degrees(minutesHandAustralia, minutesDegrees)
+            checkIf90Degrees(hoursHandAustralia, hoursDegrees)
+        }
+
+        function setDateAustralia() {
+            var australiaTime = new Date().toLocaleString("en-US", {
+                timeZone: 'Australia/Sydney'
+            });
+            australiaTime = new Date(australiaTime);
+            const now = australiaTime;
+            const seconds = now.getSeconds()
+            const minutes = now.getMinutes()
+            const hours = now.getHours()
+
+
+            const secondsDegrees = ((seconds / 60) * 360) + 90
+            secondHandNigeria.style.transform = `rotate(${secondsDegrees}deg)`
+
+            const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
+            minutesHandNigeria.style.transform = `rotate(${minutesDegrees}deg)`
+
+            const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
+            hoursHandNigeria.style.transform = `rotate(${hoursDegrees}deg)`
+
+            checkIf90Degrees(secondHandNigeria, secondsDegrees)
+            checkIf90Degrees(minutesHandNigeria, minutesDegrees)
+            checkIf90Degrees(hoursHandNigeria, hoursDegrees)
         }
 
         function setDate() {
@@ -100,6 +426,13 @@
             checkIf90Degrees(hoursHand, hoursDegrees)
         }
         setInterval(setDate, 1000);
+        setInterval(setDateNigeria, 1000);
+        setInterval(setDateAustralia, 1000);
+        setInterval(setDateNewZealand, 1000);
+        setInterval(setDateMexico, 1000);
+        setInterval(setDateUK, 1000);
+        setInterval(setDateRussia, 1000);
+        setInterval(setDateJapan, 1000);
     </script>
 </body>
 
